@@ -55,12 +55,13 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
               <motion.button
                 key={item.id}
                 onClick={() => onNavigate(item.id)}
-                className={`relative px-1 py-2 transition-colors ${
+                className={`relative px-1 py-2 transition-colors cursor-pointer ${
                   currentPage === item.id
                     ? 'text-primary'
                     : 'text-foreground hover:text-primary'
                 }`}
-                whileHover={{ y: -2 }}
+                whileHover={{ y: -2, scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 {item.label}
                 {currentPage === item.id && (
@@ -87,18 +88,23 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
                 <span>04 67 00 00 00</span>
               </a>
             </div>
-            <Button
-              className="bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/30 relative overflow-hidden group"
-              onClick={() => onNavigate('tarifs')}
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              <motion.div
-                className="absolute inset-0 bg-white/20"
-                initial={{ x: '-100%' }}
-                whileHover={{ x: '100%' }}
-                transition={{ duration: 0.6 }}
-              />
-              <span className="relative">Devis Gratuit</span>
-            </Button>
+              <Button
+                className="bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/30 relative overflow-hidden group cursor-pointer"
+                onClick={() => onNavigate('tarifs')}
+              >
+                <motion.div
+                  className="absolute inset-0 bg-white/20"
+                  initial={{ x: '-100%' }}
+                  whileHover={{ x: '100%' }}
+                  transition={{ duration: 0.6 }}
+                />
+                <span className="relative">Devis Gratuit</span>
+              </Button>
+            </motion.div>
           </motion.div>
 
           {/* Menu Mobile */}

@@ -91,15 +91,17 @@ export function Footer({ onNavigate }: FooterProps) {
             <h3 className="text-sky-400 mb-6">Liens Rapides</h3>
             <ul className="space-y-3 text-sm">
               <li>
-                <button
+                <motion.button
                   onClick={() => onNavigate('accueil')}
-                  className="text-slate-300 hover:text-white transition-colors text-left"
+                  className="text-slate-300 hover:text-white transition-colors text-left cursor-pointer"
+                  whileHover={{ x: 5, scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   Accueil
-                </button>
+                </motion.button>
               </li>
               <li>
-                <button
+                <motion.button
                   onClick={() => {
                     onNavigate('accueil');
                     setTimeout(() => {
@@ -109,26 +111,32 @@ export function Footer({ onNavigate }: FooterProps) {
                       }
                     }, 100);
                   }}
-                  className="text-slate-300 hover:text-white transition-colors text-left"
+                  className="text-slate-300 hover:text-white transition-colors text-left cursor-pointer"
+                  whileHover={{ x: 5, scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   Nos Services
-                </button>
+                </motion.button>
               </li>
               <li>
-                <button
+                <motion.button
                   onClick={() => onNavigate('interventions')}
-                  className="text-slate-300 hover:text-white transition-colors text-left"
+                  className="text-slate-300 hover:text-white transition-colors text-left cursor-pointer"
+                  whileHover={{ x: 5, scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   Interventions
-                </button>
+                </motion.button>
               </li>
               <li>
-                <button
+                <motion.button
                   onClick={() => onNavigate('tarifs')}
-                  className="text-slate-300 hover:text-white transition-colors text-left"
+                  className="text-slate-300 hover:text-white transition-colors text-left cursor-pointer"
+                  whileHover={{ x: 5, scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   Tarifs
-                </button>
+                </motion.button>
               </li>
             </ul>
           </motion.div>

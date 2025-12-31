@@ -129,26 +129,36 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
               transition={{ delay: 0.5 }}
               className="flex flex-col sm:flex-row gap-4 mb-12"
             >
-              <Button
-                className="bg-primary hover:bg-primary/90 text-white px-8 py-6 shadow-xl shadow-primary/30 group relative overflow-hidden"
-                onClick={() => onNavigate("tarifs")}
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-                  initial={{ x: "-100%" }}
-                  animate={{ x: "100%" }}
-                  transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
-                />
-                <Phone className="w-5 h-5 mr-2" />
-                <span className="relative">Urgence 24/7 : 04 67 00 00 00</span>
-              </Button>
-              <Button
-                variant="outline"
-                className="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-6"
-                onClick={() => onNavigate("interventions")}
+                <Button
+                  className="bg-primary hover:bg-primary/90 text-white px-8 py-6 shadow-xl shadow-primary/30 group relative overflow-hidden cursor-pointer"
+                  onClick={() => onNavigate("tarifs")}
+                >
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                    initial={{ x: "-100%" }}
+                    animate={{ x: "100%" }}
+                    transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
+                  />
+                  <Phone className="w-5 h-5 mr-2" />
+                  <span className="relative">Urgence 24/7 : 04 67 00 00 00</span>
+                </Button>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                Nos Interventions
-              </Button>
+                <Button
+                  variant="outline"
+                  className="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-6 cursor-pointer transition-all duration-300"
+                  onClick={() => onNavigate("interventions")}
+                >
+                  Nos Interventions
+                </Button>
+              </motion.div>
             </motion.div>
 
             {/* Points forts */}
