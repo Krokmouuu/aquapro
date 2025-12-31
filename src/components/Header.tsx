@@ -20,7 +20,7 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border shadow-sm">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-20 relative">
           {/* Logo */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -49,8 +49,8 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
             </div>
           </motion.div>
 
-          {/* Navigation Desktop */}
-          <nav className="hidden md:flex items-center gap-8">
+          {/* Navigation Desktop - Centrée */}
+          <nav className="hidden md:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2">
             {navItems.map((item) => (
               <motion.button
                 key={item.id}
@@ -76,7 +76,7 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
 
           {/* CTA Desktop */}
           <motion.div
-            className="hidden md:flex items-center gap-4"
+            className="hidden md:flex items-center gap-4 justify-end"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
           >
